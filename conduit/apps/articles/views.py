@@ -73,6 +73,7 @@ class ArticleViewSet(mixins.CreateModelMixin,
 
         try:
             serializer_instance = self.queryset.get(slug=slug)
+            serializer_instance.foo()
         except Article.DoesNotExist:
             raise NotFound('An article with this slug does not exist.')
 
